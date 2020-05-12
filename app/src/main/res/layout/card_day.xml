@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cvCardDay"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="@color/colorListBkg"
+    android:orientation="horizontal"
+    android:padding="3dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="3dp">
+
+        <TextView
+            android:id="@+id/tvCardDayNameOfDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="monday"
+            android:textColor="@color/colorCardText"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvCardDayDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="16.02.20"
+            android:textColor="@color/colorCardText"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4">
+
+        <ImageView
+            android:id="@+id/ivCardDayPic"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:padding="3dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="3dp">
+            <!--condition-->
+
+            <TextView
+                android:id="@+id/tvCardDayCondition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="25dp"
+                android:text="Sunny"
+                android:textColor="@color/colorCardText"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/tvCardDayTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="8dp"
+                android:text="19C"
+                android:textColor="@color/colorCardText"
+                android:textSize="18sp" />
+            <!--proporties-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Wind"
+                        android:textColor="@color/colorCardText"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Humidity"
+                        android:textColor="@color/colorCardText"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Rain"
+                        android:textColor="@color/colorCardText"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <!--proporties2-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:id="@+id/tvCardDayWind"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="23mph"
+                        android:textColor="@color/colorCardText"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvCardDayHumidity"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="65%"
+                        android:textColor="@color/colorCardText"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvCardDayRain"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="10%"
+                        android:textColor="@color/colorCardText"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
