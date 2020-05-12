@@ -31,14 +31,6 @@ class FragmentLowerList() : Fragment() {
     val NEWS_BASE_URL = "https://newsapi.org/v2/everything?q=" //israel;
     val API_KEY = "&apiKey=7c46ec14171146958d70df2056a62308"
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_lower_list, container, false)
         var reqNews: String
@@ -60,8 +52,8 @@ class FragmentLowerList() : Fragment() {
 
         mNewsViewModel.getArticles()?.observe(activity!!, Observer { news ->
             mArticleList = news.articles
-            if (mArticleList.isEmpty()){
-                Snackbar.make(rootView,"No News Available on this topic",Snackbar.LENGTH_LONG).show()
+            if (mArticleList.isEmpty()) {
+                Snackbar.make(rootView, "No News Available on this topic", Snackbar.LENGTH_LONG).show()
                 rootView.pickNewsTV.visibility = View.VISIBLE
                 mRecyclerView.visibility = View.GONE
             }
@@ -85,40 +77,6 @@ class FragmentLowerList() : Fragment() {
     private fun initRecyclerView() {
         mRecyclerView.setHasFixedSize(true)
         mRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-    }
-
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-    }
-
-    override fun onStart() {
-        super.onStart()
-    }
-
-    override fun onResume() {
-        super.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-    }
-
-    override fun onStop() {
-        super.onStop()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        mNewsViewModel.cancelJobs()
-    }
-
-    override fun onDetach() {
-        super.onDetach()
     }
 
 }

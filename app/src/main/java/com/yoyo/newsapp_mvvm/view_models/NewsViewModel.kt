@@ -33,10 +33,6 @@ class NewsViewModel() : ViewModel() {
                 }
         }
     }
-//    var news: LiveData<NewsModel2> = Transformations
-//        .switchMap(_requestedNews) { requestedNews -> // listening to requestedNews string and if it changes (by calling setRequestedNews) it will trigger the code inside {} and return the NewsModel2 object
-//            view?.let { NewsRepository.getNews(requestedNews, API_KEY, it) }
-//        }
 
     fun setRequestedNews(requestedNews: String = "usa") {
         if (_requestedNews.value != requestedNews) {

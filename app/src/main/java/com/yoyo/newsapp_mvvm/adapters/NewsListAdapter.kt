@@ -33,7 +33,7 @@ class NewsListAdapter(private var newsList: List<ArticleModel2> = ArrayList()) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        newsList?.get(position)?.let { list->holder.bind(list) }
+        newsList?.get(position)?.let { list -> holder.bind(list) }
     }
 
     override fun getItemCount(): Int = newsList!!.size

@@ -11,7 +11,7 @@ import kotlinx.coroutines.Dispatchers.Main
 
 object NewsRepository {
     private var job: CompletableJob? = null
-    private var lastGoodResult: LiveData<NewsModel2>? =null
+    private var lastGoodResult: LiveData<NewsModel2>? = null
 
     /*    fun getNews(requestedNews:String,apiKey :String):LiveData<NewsModel2>{
            job = Job()
@@ -39,7 +39,7 @@ object NewsRepository {
         job?.cancel()
     }
 
-    fun getNews(requestedNews: String, apiKey: String,view:View): LiveData<NewsModel2> {
+    fun getNews(requestedNews: String, apiKey: String, view: View): LiveData<NewsModel2> {
         job = Job()
         return object : LiveData<NewsModel2>() {
             override fun onActive() {
@@ -56,7 +56,7 @@ object NewsRepository {
                         } catch (e: Exception) {
                             withContext(Main) {
                                 cancelJobs()
-                                Snackbar.make(view,"No Internet Connection",Snackbar.LENGTH_LONG).show()
+                                Snackbar.make(view, "No Internet Connection", Snackbar.LENGTH_LONG).show()
                             }
                         }
                     }
@@ -65,8 +65,4 @@ object NewsRepository {
             }
         }
     }
-//    var client = RetrofitBuilder.apiService
-//    suspend fun getNews(requestedNews:String,apiKey :String){
-//        client.getNews(requestedNews,apiKey)
-//    }
 }

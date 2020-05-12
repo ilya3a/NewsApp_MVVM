@@ -9,7 +9,7 @@ interface ApiService {
 
     @GET("v2/everything")
     suspend fun getNews(
-        @Query("q")requestedNews: String,
-        @Query("apiKey")apiKey: String
+        @Query("q") requestedNews: String,
+        @Query("apiKey") apiKey: String
     ): NewsModel2
 }
