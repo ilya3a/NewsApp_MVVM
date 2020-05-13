@@ -13,8 +13,8 @@ import com.yoyo.newsapp_mvvm.repositories.NewsRepository
 class NewsViewModel : ViewModel() {
 
     private var mContext:Context? = null
-    var mNews: LiveData<NewsModel>? = null
-    var _requestedNews: MutableLiveData<String> = MutableLiveData()
+    private var mNews: LiveData<NewsModel>? = null
+    private var _requestedNews: MutableLiveData<String> = MutableLiveData()
 
     fun getArticles(): LiveData<NewsModel>? {
         if (mNews == null) {
@@ -46,7 +46,7 @@ class NewsViewModel : ViewModel() {
         mContext = context
     }
 
-    fun cancelJobs() {
+    private fun cancelJobs() {
         NewsRepository.cancelJobs()
     }
 
