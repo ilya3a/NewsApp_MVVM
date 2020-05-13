@@ -36,7 +36,7 @@ class FragmentLowerList() : Fragment() {
         mRecyclerView = rootView.recyclerViewOfDays
         initRecyclerView()
         mNewsViewModel = activity?.let { ViewModelProvider(it).get(NewsViewModel::class.java) }!!
-        mNewsViewModel.setView(rootView)
+        mNewsViewModel.setContext(activity!!.applicationContext)
         mNewsViewModel._requestedNews.observe(activity!!, Observer { req ->
             reqNews = req
             if (!reqNews.isBlank()) {

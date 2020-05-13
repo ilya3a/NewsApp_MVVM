@@ -1,6 +1,8 @@
 package com.yoyo.newsapp_mvvm.view_models
 
+import android.content.Context
 import android.view.View
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
@@ -10,8 +12,7 @@ import com.yoyo.newsapp_mvvm.repositories.NewsRepository
 
 class NewsViewModel : ViewModel() {
 
-    private val API_KEY = "7c46ec14171146958d70df2056a62308"
-    private var mView: View? = null
+    private var mContext:Context? = null
     var mNews: LiveData<NewsModel>? = null
     var _requestedNews: MutableLiveData<String> = MutableLiveData()
 
@@ -25,11 +26,12 @@ class NewsViewModel : ViewModel() {
     }
 
     private fun loadNews() {
-        mView?.let {
+        mContext?.let {
             mNews = Transformations
                 .switchMap(_requestedNews) { requestedNews -> // listening to requestedNews string and if it changes (by calling setRequestedNews) it will trigger the code inside {} and return the NewsModel2 object
-                    NewsRepository.getNews(requestedNews, API_KEY, it)
+                    NewsRepository.getNews(requestedNews, it)
                 }
+            cancelJobs()
         }
     }
 
@@ -40,8 +42,8 @@ class NewsViewModel : ViewModel() {
 
     }
 
-    fun setView(view: View) {
-        mView = view
+    fun setContext(context: Context) {
+        mContext = context
     }
 
     fun cancelJobs() {
