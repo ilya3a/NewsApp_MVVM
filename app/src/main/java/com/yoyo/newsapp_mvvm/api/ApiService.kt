@@ -1,6 +1,6 @@
 package com.yoyo.newsapp_mvvm.api
 
-import com.yoyo.newsapp_mvvm.data_models.NewsModel2
+import com.yoyo.newsapp_mvvm.data_models.NewsModel
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -11,5 +11,5 @@ interface ApiService {
     suspend fun getNews(
         @Query("q") requestedNews: String,
         @Query("apiKey") apiKey: String
-    ): NewsModel2
+    ): NewsModel
 }

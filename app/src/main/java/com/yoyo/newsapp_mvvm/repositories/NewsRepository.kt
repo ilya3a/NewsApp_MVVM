@@ -4,14 +4,14 @@ import android.view.View
 import androidx.lifecycle.LiveData
 import com.google.android.material.snackbar.Snackbar
 import com.yoyo.newsapp_mvvm.api.RetrofitBuilder
-import com.yoyo.newsapp_mvvm.data_models.NewsModel2
+import com.yoyo.newsapp_mvvm.data_models.NewsModel
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
 
 object NewsRepository {
     private var job: CompletableJob? = null
-    private var lastGoodResult: LiveData<NewsModel2>? = null
+    private var lastGoodResult: LiveData<NewsModel>? = null
 
     /*    fun getNews(requestedNews:String,apiKey :String):LiveData<NewsModel2>{
            job = Job()
@@ -39,9 +39,9 @@ object NewsRepository {
         job?.cancel()
     }
 
-    fun getNews(requestedNews: String, apiKey: String, view: View): LiveData<NewsModel2> {
+    fun getNews(requestedNews: String, apiKey: String, view: View): LiveData<NewsModel> {
         job = Job()
-        return object : LiveData<NewsModel2>() {
+        return object : LiveData<NewsModel>() {
             override fun onActive() {
                 super.onActive()
                 job?.let {

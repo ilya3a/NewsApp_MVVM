@@ -3,7 +3,7 @@ package com.yoyo.newsapp_mvvm.data_models
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class ArticleModel2(
+data class ArticleModel(
     @Expose
     @SerializedName("source")
     val source: Source? = null,

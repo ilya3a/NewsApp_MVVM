@@ -1,7 +1,6 @@
 package com.yoyo.newsapp_mvvm.fragments
 
 import android.app.AlertDialog
-import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.yoyo.newsapp_mvvm.R
 import com.yoyo.newsapp_mvvm.adapters.NewsListAdapter
-import com.yoyo.newsapp_mvvm.data_models.ArticleModel2
+import com.yoyo.newsapp_mvvm.data_models.ArticleModel
 import com.yoyo.newsapp_mvvm.view_models.NewsViewModel
 import kotlinx.android.synthetic.main.enter_news.view.*
 import kotlinx.android.synthetic.main.fragment_lower_list.view.*
@@ -24,7 +23,7 @@ class FragmentLowerList() : Fragment() {
 
     private lateinit var mNewsViewModel: NewsViewModel
     private lateinit var mRecyclerView: RecyclerView
-    private var mArticleList: List<ArticleModel2> = ArrayList()
+    private var mArticleList: List<ArticleModel> = ArrayList()
     private lateinit var mRecyclerViewAdapter: NewsListAdapter
 
 
