@@ -8,10 +8,9 @@ import androidx.lifecycle.ViewModel
 import com.yoyo.newsapp_mvvm.data_models.NewsModel
 import com.yoyo.newsapp_mvvm.repositories.NewsRepository
 
-class NewsViewModel() : ViewModel() {
+class NewsViewModel : ViewModel() {
 
     private val API_KEY = "7c46ec14171146958d70df2056a62308"
-    private var mReqNews: String? = null
     private var mView: View? = null
     var mNews: LiveData<NewsModel>? = null
     var _requestedNews: MutableLiveData<String> = MutableLiveData()
