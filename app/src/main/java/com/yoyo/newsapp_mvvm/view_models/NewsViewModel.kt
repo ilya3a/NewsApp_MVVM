@@ -14,7 +14,7 @@ class NewsViewModel : ViewModel() {
 
     private var mContext:Context? = null
     private var mNews: LiveData<NewsModel>? = null
-    private var _requestedNews: MutableLiveData<String> = MutableLiveData()
+    var _requestedNews: MutableLiveData<String> = MutableLiveData()
 
     fun getArticles(): LiveData<NewsModel>? {
         if (mNews == null) {
